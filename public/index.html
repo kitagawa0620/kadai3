@@ -1,19 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
-</html>
+<div id="app">
+  <h1>Weather</h1>
+  <div class="search-bar">
+    <input v-model="city" placeholder="City name" />
+    <button @click="fetchWeather">Search</button>
+  </div>
+
+  <div v-if="weather" class="weather-card">
+    <h2>{{ weather.name }}</h2>
+    <img :src="iconUrl" alt="icon" />
+    <p class="desc">{{ weather.weather[0].description }}</p>
+    <p class="temp">{{ (weather.main.temp - 273.15).toFixed(1) }} ℃</p>
+
+    <div class="info-grid">
+      <div><strong>Wind</strong><br>{{ weather.wind.speed }} m/s</div>
+      <div><strong>Rain (1h)</strong><br>{{ weather.rain?.['1h'] ?? 0 }} mm</div>
+      <div><strong>Humidity</strong><br>{{ weather.main.humidity }}%</div>
+      <div><strong>Clouds</strong><br>{{ weather.clouds.all }}%</div>
+    </div>
+  </div>
+</div>
+

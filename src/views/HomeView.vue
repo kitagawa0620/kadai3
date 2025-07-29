@@ -1,6 +1,9 @@
 <template>
   <v-container>
     <ProductList />
+    <router-link to="/about">
+    <v-btn>画面遷移</v-btn>
+    </router-link>
   </v-container>
 </template>
 
@@ -13,5 +16,10 @@
     components: {
       ProductList,
     },
-  }
+    methods:{
+      pagechange(){
+        this.$router.push('/about');
+      }
+    }
+  };
 </script>

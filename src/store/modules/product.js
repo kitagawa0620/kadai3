@@ -5,7 +5,9 @@ export default {
     products: [
       { id: 1, name: 'リンゴ', price: 150, quantity: 0 },
       { id: 2, name: 'バナナ', price: 120, quantity: 0 },
-      { id: 3, name: 'みかん', price: 100, quantity: 0 }
+      { id: 3, name: 'みかん', price: 100, quantity: 0 },
+      { id: 4, name: 'スイカ', price: 2980, quantity: 0 },
+      { id: 5, name: 'メロン', price: 4980, quantity: 0 }
     ]
   },
   getters: {
