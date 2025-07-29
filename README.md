@@ -25,3 +25,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 "# kitagawa" 
 "# kadai3" 
 "# kadai3" 
+"# kadai3" 
